@@ -1,37 +1,25 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
-[contributors-shield]: https://img.shields.io/github/contributors/mishraaditya595/ScanIt?style=flat-square
-[contributors-url]: https://github.com/mishraaditya595/ScanIt/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mishraaditya595/ScanIt?style=flat-square
-[forks-url]: https://github.com/mishraaditya595/ScanIt/network/members
-[stars-shield]: https://img.shields.io/github/stars/mishraaditya595/ScanIt?color=red&style=flat-square
-[stars-url]: https://github.com/mishraaditya595/ScanIt/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mishraaditya595/ScanIt?color=orange&style=flat-square
-[issues-url]: https://github.com/mishraaditya595/ScanIt/issues
-
+[//]: <> (Comments)
 <p align="center">
   <a href=" https://www.hackerrank.com/domains/tutorials/30-days-of-code">
-   <img src="https://github.com/mishraaditya595/ScanIt/blob/master/app/src/main/res/mipmap-xxxhdpi/scanit_icon_round.png" alt="Logo" height="200" width="200"></a>
+   <img src = "https://github.com/ArshpreetS/ScanIt/blob/master/app/src/main/res/mipmap-xxxhdpi/Scanit.png" alt = "Scan it logo" />
   </a>
 
-  <h3 align="center">ScanIt</h3>
+[//]: <> (Badges)
+[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
+<br/>
+![GitHub forks](https://img.shields.io/github/forks/mishraaditya595/ScanIt?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/mishraaditya595/ScanIt?style=for-the-badge)
+
+
 
   <p align="center">
-    Repository for ScanIt
-    <br />
-    <a href="https://github.com/mishraaditya595/ScanIt"><strong>View the Repo</strong></a>
-    <br />
-    <br />
     ScanIt is an Android application that aims to be your all in one scanner. The best part is the fact that this app is open source.
     <br />
-    <a href="https://github.com/mishraaditya595/ScanIt/blob/master/CONTRIBUTING.md">How to Contribute</a>
-    ·
-    <a href="https://github.com/mishraaditya595/ScanIt/issues">Contribute Here</a>
-    ·
-    <a href="https://github.com/mishraaditya595/ScanIt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>
+    <a href="https://github.com/mishraaditya595/ScanIt"><strong> Repository </strong></a>
   </p>
 </p>
 
@@ -56,20 +44,27 @@
 
 <img src="https://github.com/mishraaditya595/ScanIt/blob/master/Screenshots/1603558649389.png" alt="Screenshot" height="350" width="200"/></a>
 <img src="https://github.com/mishraaditya595/ScanIt/blob/master/Screenshots/1603558656662.png" alt="Screenshot" height="350" width="200"/></a>
-<img src="https://github.com/mishraaditya595/ScanIt/blob/master/Screenshots/1603558640202.png" alt="Screenshot" height="350" width="200"/></a>
-<img src="https://github.com/mishraaditya595/ScanIt/blob/master/Screenshots/1603558629214.png" alt="Screenshot" height="350" width="200"/></a>
+<img src="https://github.com/mishraaditya595/ScanIt/blob/master/Screenshots/1603558640202.png" alt="Screenshot" height="350" width="200"/></a><img src="https://github.com/mishraaditya595/ScanIt/blob/master/Screenshots/1603558629214.png" alt="Screenshot" height="350" width="200"/></a>
 
 ## Contributing 💻
 
+
+
 If you have any idea, feel free to fork it and submit your changes back to me. Contributions are appreciated.
-
-Please check the contributing guidelines [here](https://github.com/mishraaditya595/Scanner/blob/master/CONTRIBUTING.md) before making a pull request.
-
-Do checkout code of conduct [here](https://github.com/mishraaditya595/Scanner/blob/master/CODE_OF_CONDUCT.md).
+<br/>
+  <a href="https://github.com/mishraaditya595/ScanIt/blob/master/CONTRIBUTING.md">How to Contribute</a>
+    ·
+  <a href="https://github.com/mishraaditya595/Scanner/blob/master/CONTRIBUTING.md">Contributing Guidlines</a>
+    ·
+  <a href="https://github.com/mishraaditya595/ScanIt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>
+    ·
+  <a href="https://github.com/mishraaditya595/ScanIt/issues">Contribute here</a>
 
 ## License ✅
 
 This project is licensed under BSD 3-Clause "New" or "Revised" License. Check it out [here](https://github.com/mishraaditya595/ScanIt/blob/master/LICENSE).
+
+<br/>
 
 ## Credits 👨‍💼
 
@@ -85,7 +80,8 @@ The following libraries/modules/resources are used in the project:
 - [QR Generator](https://github.com/androidmads/QRGenerator) by Mushtaq M A, licenced under MIT.
 - [ZXing Core](https://mvnrepository.com/artifact/com.google.zxing/core/3.3.2) by Google.
 - [Dynamic Toasts](https://github.com/pranavpandey/dynamic-toasts) by Pranav Pandey, licenced under Apache 2.0.
-
+- [Forthebadge](https://forthebadge.com/)
+- [Shields](https://shields.io/)
 - [Material.io](https://material.io/)
 
 ## Open-source Programs we are a part of 👨‍💻
