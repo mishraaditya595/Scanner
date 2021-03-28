@@ -11,7 +11,7 @@ import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
 import com.vob.scanit.R
 import java.io.File
 
-
+/*DisplayPDFActivity class has methods that display the contents of each PDF file and provide further functionality*/
 class DisplayPDFActivity : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListener {
 
     lateinit var pdfView: PDFView
@@ -20,6 +20,7 @@ class DisplayPDFActivity : AppCompatActivity(), OnPageChangeListener, OnLoadComp
     var position: Int = -1
     //lateinit var file: File
 
+    /*The following function calls the displayPDF() and passes it the filepath*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_pdf)
@@ -37,6 +38,7 @@ class DisplayPDFActivity : AppCompatActivity(), OnPageChangeListener, OnLoadComp
 
     }
 
+    /*setupToolbar() sets up and displays the toolbar*/
     private fun setupToolbar() {
         var toolbar = findViewById<Toolbar>(R.id.pdf_view_toolbar)
         toolbar.setTitle(fileName)
@@ -48,10 +50,12 @@ class DisplayPDFActivity : AppCompatActivity(), OnPageChangeListener, OnLoadComp
         supportActionBar?.setDisplayShowHomeEnabled(true);
     }
 
+    /*We initialise pdfView in the following function */
     private fun initialiseFields() {
        pdfView = findViewById(R.id.pdf_viewer)
     }
 
+    /*displayPDF() displays the PDF file*/
     private fun displayPDF(file: File) {
         pdfView.fromFile(file)
                 .defaultPage(pageNumber)
@@ -64,16 +68,19 @@ class DisplayPDFActivity : AppCompatActivity(), OnPageChangeListener, OnLoadComp
                 .load()
     }
 
+    /*The following functions handles the activities that occur when a user swipes through the pages*/
     override fun onPageChanged(page: Int, pageCount: Int) {
         val pageNum = page
         setTitle(String.format("%s %s / %s", fileName, page+1, pageCount))
     }
 
+    /*When the document gets loaded, the bookmarks get displayed with a call to printBookmarksTree()*/
     override fun loadComplete(nbPages: Int) {
         val meta = pdfView.documentMeta
         printBookmarksTree(pdfView.tableOfContents,"-")
     }
 
+    /*printBookmarksTree fetches all the bookmarks made by the user*/
     private fun printBookmarksTree(tableOfContents: List<com.shockwave.pdfium.PdfDocument.Bookmark>, s: String) {
         for (item: com.shockwave.pdfium.PdfDocument.Bookmark  in tableOfContents) {
             if (item.hasChildren())

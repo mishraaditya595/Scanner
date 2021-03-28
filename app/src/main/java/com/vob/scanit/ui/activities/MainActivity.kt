@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
     var sharedPreferences: SharedPreferences? = null
     private val SHARED_PREF = "APP_SHARED_PREF"
 
-
+    /*The following function sets the app theme, loads the main XML, calls the required fragments
+      and provides an entry point to the Firebase SDK*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -97,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                 .show()
     }
 
+    /*setupToolbar() sets up the main toolbar that gets displayed when the app is loaded*/
     private fun setupToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.main_toolbar)
         //toolbar.setTitle("ScanIt")
@@ -127,6 +129,7 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    /* loadFragment() maintains a record of the changes in the fragment in a stack*/
     private fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, fragment)

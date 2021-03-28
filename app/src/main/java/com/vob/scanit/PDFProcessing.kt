@@ -14,24 +14,24 @@ import com.vob.scanit.ui.fragments.HomeFragment
 import java.io.*
 import java.util.*
 
+/* The following class enables us to generate, compress and save PDF documents*/
 public class PDFProcessing(context: Context) {
 
     lateinit var pdfDocument: PdfDocument
     val context = context
 
-
+    /*makePDF() is used to create a new PDF document, start a page, write content to it and save the document*/
     public fun makePDF(bitmap: Bitmap, filename: String) {
-        pdfDocument = PdfDocument()
-
+        pdfDocument = PdfDocument()  //create a new PDF document
 
         val compressedBitmap = compressBitmap(bitmap)
         val pageInfo: PdfDocument.PageInfo = PdfDocument.PageInfo.Builder(compressedBitmap.width, compressedBitmap.height, 1).create()
-        val page: PdfDocument.Page = pdfDocument.startPage(pageInfo)
+        val page: PdfDocument.Page = pdfDocument.startPage(pageInfo) //start a page
         val canvas: Canvas = page.getCanvas()
         val paint = Paint()
         paint.setColor(Color.parseColor("#FFFFFF"))
         canvas.drawBitmap(compressedBitmap, 0.0f, 0.0f, null)
-        pdfDocument.finishPage(page)
+        pdfDocument.finishPage(page)  //finish the page
         //if (fileName.getText().toString().isEmpty()) {
         //    Toast.makeText(context, "You need to enter file name as follow\nyour_fileName.pdf", Toast.LENGTH_SHORT).show()
         //}
@@ -41,13 +41,14 @@ public class PDFProcessing(context: Context) {
             saveFileToScopedStorage(filename)
         }
 
-        else
+        else  //if filename does not have .pdf extension, we append it with the extension before calling save method
         {
             //saveFile("$filename.pdf")
             saveFileToScopedStorage("$filename.pdf")
         }
     }
 
+    /*The following function compresses the document to a standard size*/
     private fun compressBitmap(bitmap: Bitmap): Bitmap {
         val originalHeight = bitmap.height
         val originalWidth = bitmap.width
@@ -70,13 +71,12 @@ public class PDFProcessing(context: Context) {
         return compressedBitmap
     }
 
-
+    /* saveFile() writes the PDF document to the output stream */
     fun saveFile(filename: String) {
         if (pdfDocument == null) {
             return
         }
         val root = File(Environment.getExternalStorageDirectory().absolutePath, "Scanner")
-
 
         var isDirectoryCreated: Boolean = root.exists()
         if (!isDirectoryCreated) {
@@ -101,6 +101,8 @@ public class PDFProcessing(context: Context) {
         return true
     }
 
+    /* The following function saves the PDF file. It uses the ContentValues class to store a
+    *  set of values that the ContentResolver can process. The put() method adds a value to the set */
     fun saveFileToScopedStorage(filename: String) {
         val fos: FileOutputStream
         try {

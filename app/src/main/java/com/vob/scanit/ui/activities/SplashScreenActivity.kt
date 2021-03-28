@@ -7,6 +7,7 @@ import android.os.Handler
 import com.rbddevs.splashy.Splashy
 import com.vob.scanit.R
 
+/*SplashScreenActivity class provides animations and other customisations when the app logo is loaded*/
 class SplashScreenActivity : AppCompatActivity() {
 
     lateinit var handler: Handler

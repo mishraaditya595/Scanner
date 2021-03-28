@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 android {
     //noinspection GradleCompatible
     compileSdkVersion 28
-    buildToolsVersion "29.0.3"
+    buildToolsVersion '28'
 
     defaultConfig {
         minSdkVersion 21

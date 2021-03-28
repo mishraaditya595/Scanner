@@ -17,7 +17,8 @@ import com.vob.scanit.viewmodel.DocumentFragmentViewModel
 import com.vob.scanit.viewmodel.DocumentViewModelFactory
 import java.io.File
 
-
+/*DocumentFragment is a Fragment class and represents a reusable portion of the app's UI. We override
+* the methods of the Fragment class */
 class DocumentFragment : Fragment() {
 
     private lateinit var binding: FragmentDocumentBinding
@@ -27,12 +28,14 @@ class DocumentFragment : Fragment() {
         documentListAdapter.updateDocumentList(list)
     }
 
+    /*onCreateView() is used to inflate the layout*/
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_document, container, false)
     }
 
+    /*onViewCreated() ensures the view is fully created, and is called immediately after onCreateView()*/
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDocumentBinding.bind(view)

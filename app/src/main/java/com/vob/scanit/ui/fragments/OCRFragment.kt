@@ -35,6 +35,7 @@ import java.io.File
 import java.io.InputStream
 import java.util.*
 
+/*OCRFragment handles all the functions related to optical character recognition*/
 class OCRFragment : Fragment() {
 
     companion object{

@@ -22,7 +22,8 @@ import com.vob.scanit.ui.activities.QRBarcodeScanResultActivity
 //import com.vob.scanit.R
 import com.vob.scanit.ui.activities.ShowQRData
 
-
+/*QRFragment class overrides methods that handle inflating the layout, creating the views, releasing
+* camera when not in use and starts the preview surface for the camera */
 class QRFragment : Fragment() {
 
     //private val REQUEST_CODE_QR_SCAN = 101

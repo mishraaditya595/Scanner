@@ -29,6 +29,7 @@ android {
             manifest.srcFile 'AndroidManifest.xml'
         }
     }
+    buildToolsVersion '26'
 }
 
 dependencies {

@@ -15,11 +15,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
 
+/* DocumentFragmentViewModel is an instance of the ViewModel class that is designed to
+*  store data in a lifecycle aware manner (updates UI on rotation of the screen) */
 class DocumentFragmentViewModel(): ViewModel() {
 
     val documents = MutableLiveData<ArrayList<File>>()
     private var contentObserver: ContentObserver? = null
 
+    /*loadDocument() function displays the list of documents and survives configuration changes*/
     fun loadDocuments() {
         viewModelScope.launch {
             val dir = File(Environment.DIRECTORY_DOCUMENTS + File.separator + "ScanIt")
@@ -28,6 +31,8 @@ class DocumentFragmentViewModel(): ViewModel() {
         }
     }
 
+    /* The following suspend function obtains all the files in the given directory and returns a list
+    *  that contains all the PDF files from the directory.*/
     suspend fun getFiles(dir: File): ArrayList<File> {
         var listFiles = dir.listFiles()
         var fileList: ArrayList<File> = ArrayList()

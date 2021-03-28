@@ -21,6 +21,8 @@ import com.vob.scanit.ui.CustomCameraPreview
 import kotlinx.android.synthetic.main.activity_scan.*
 import java.io.File
 
+/* ScanActivity class defines methods to display text from the scanned image and
+*  other functionality to process the images taken by the camera in the application  */
 class ScanActivity: AppCompatActivity() {
 
     private val TAG = "ScanIt"
@@ -111,7 +113,7 @@ class ScanActivity: AppCompatActivity() {
     private fun readBytes(context: Context, uri: Uri): ByteArray? =
             context.contentResolver.openInputStream(uri)?.buffered()?.use { it.readBytes() }
 
-
+    /*The following function processes the image to detect the text*/
     private fun detectText(scannedImage: Bitmap?)
     {
         var firebaseVisionImage: FirebaseVisionImage = FirebaseVisionImage.fromBitmap(scannedImage!!)
@@ -126,6 +128,8 @@ class ScanActivity: AppCompatActivity() {
                 }
     }
 
+    /*displayTextFromImage() displays the text obtained from an image or an appropriate message when it
+    * cannot decipher the text in the image*/
     private fun displayTextFromImage(firebaseVisionText: FirebaseVisionText) {
         //textView.text = ""
         var blockList: List<FirebaseVisionText.TextBlock> = firebaseVisionText.textBlocks

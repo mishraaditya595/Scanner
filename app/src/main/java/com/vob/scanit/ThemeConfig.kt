@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 
+/*This kotlin file defines the themes for the app, which allows the user to toggle between system theme,
+* light theme and dark theme*/
+
 fun currentSystemTheme(context: Context):Int{
     return when(context.resources.configuration.uiMode.and(Configuration.UI_MODE_NIGHT_MASK)){
         Configuration.UI_MODE_NIGHT_NO -> 1

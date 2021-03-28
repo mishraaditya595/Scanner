@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.vob.scanit.R
 import kotlinx.android.synthetic.main.custom_camera_preview.*
 
-
+/*CustomCameraPreview class opens the back camera and sets the camera preview surface*/
 class CustomCameraPreview : AppCompatActivity() {
 
     private val TAG = "CustomCameraPreview"
@@ -86,6 +86,7 @@ class CustomCameraPreview : AppCompatActivity() {
             }
         }*/
 
+        /*When the capture button gets clicked, the image is captured*/
         take_picture.setOnClickListener {
             onClickOrientation = mOrientation
             try {
@@ -95,12 +96,14 @@ class CustomCameraPreview : AppCompatActivity() {
             }
         }
 
+        /*When user clicks on the close button, the preview is taken down*/
         close_camera_preview.setOnClickListener {
             setResult(RESULT_CANCELED,Intent())
             finish()
         }
     }
 
+    /*The saveBitmap() function compresses the image to a standard size*/
     private fun saveBitmap(bitmap: Bitmap) : File{
         return try {
             val tempPath = cacheDir.absolutePath+"/TempImage.jpeg"
@@ -117,6 +120,7 @@ class CustomCameraPreview : AppCompatActivity() {
         }
     }
 
+    /*returns the image clicked, to the activity that called the camera*/
     private val pictureCallback = Camera.PictureCallback { data, camera
         ->
         try {
@@ -163,6 +167,7 @@ class CustomCameraPreview : AppCompatActivity() {
             }
     }
 
+    /*The rotate() function rotates the image by 90 degrees each time it is called */
     private fun rotate(bitmap: Bitmap, degrees: Int): Bitmap {
         return try {
             val matrix = Matrix()
@@ -177,6 +182,7 @@ class CustomCameraPreview : AppCompatActivity() {
         }
     }
 
+    /*Camera is released when activity gets paused, and later started again when we resume */
     override fun onPause() {
         super.onPause()
         mCamera?.release()

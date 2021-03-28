@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.vob.scanit.R
 
+/*QRBarcodeScanResultActivity class provides options to a user to process the data generated from the QR */
 class QRBarcodeScanResultActivity : AppCompatActivity() {
 
     lateinit var scanData: String
@@ -19,6 +20,7 @@ class QRBarcodeScanResultActivity : AppCompatActivity() {
     lateinit var shareBtn: Button
     lateinit var scanResultTV: TextView
 
+    /*onCreate() handles button clicks, where the user can select to share the data obtained or open it in a browser*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_q_r_barcode_scan_result)
@@ -35,12 +37,14 @@ class QRBarcodeScanResultActivity : AppCompatActivity() {
         shareBtn.setOnClickListener { share() }
     }
 
+    /*The class variables are initialised*/
     private fun initialiseFields() {
         openInBrowserBtn = findViewById(R.id.openInBrowser_btn)
         scanResultTV = findViewById(R.id.scanResult_tv)
         shareBtn = findViewById(R.id.share_btn)
     }
 
+    /*When the user chooses to open the results of the scan in the browser, the following function is called*/
     private fun openInBrowser() {
         val isUrl: Boolean = URLUtil.isValidUrl(scanData)
         if (isUrl)
@@ -55,6 +59,8 @@ class QRBarcodeScanResultActivity : AppCompatActivity() {
         }
     }
 
+    /*When the user chooses to share the QR data, the share() function opens an app chooser to allow the
+      user to choose from the options available*/
     private fun share() {
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
@@ -66,6 +72,8 @@ class QRBarcodeScanResultActivity : AppCompatActivity() {
         startActivity(shareIntent)
     }
 
+    /*When the user selects the option to open the QR data in a browser, and the data generated is not an
+    * URL, we display appropriate messages*/
     private fun showAlertDialog() {
         val alert: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
         val mView: View = layoutInflater.inflate(R.layout.filename_dialog, null)
@@ -94,6 +102,7 @@ class QRBarcodeScanResultActivity : AppCompatActivity() {
         alertDialog?.show()
     }
 
+    /*setupToolbar() sets up the toolbar*/
     private fun setupToolbar() {
         var toolbar = findViewById<Toolbar>(R.id.showdata_toolbar)
         toolbar.title = "Scan Result"

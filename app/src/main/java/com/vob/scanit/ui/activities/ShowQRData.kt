@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.vob.scanit.R
 
+/*The following class processes the data obtained from the QR*/
 class ShowQRData : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,7 +15,6 @@ class ShowQRData : AppCompatActivity() {
         val tv = findViewById<TextView>(R.id.tv)
         if (data != null)
         {
-
             tv.text = data
         }
         else

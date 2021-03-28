@@ -9,6 +9,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import java.io.IOException;
 
+/* The following class sets the surface view when the camera feature is requested by the application */
 public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 
     private SurfaceHolder surfaceHolder;
@@ -16,6 +17,7 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
     private Camera camera;
     private int cameraType;
 
+    /*CameraSurfaceView() constructor to initialise class variables*/
     public CameraSurfaceView(Context context, Camera camera, int cameraType) {
         super(context);
         this.context = context;
@@ -27,6 +29,7 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     }
 
+    /*Allows the user to have the device placed in both, portrait and landscape modes*/
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         try {
@@ -39,6 +42,7 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
         }
     }
 
+    /*Account for the changes in camera setting such as zooming in, modifying exposure levels, etc.*/
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
@@ -63,10 +67,14 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     }
 
+    /* The following function releases the camera when the existing preview surface gets destroyed */
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         camera.release();
     }
+
+    /*setCameraDisplayOrientation() function allows the preview to be changed without having any effects
+    * on how the image gets recorded*/
     public static void setCameraDisplayOrientation(Activity activity,
                                                    int cameraId, Camera camera) {
         Camera.CameraInfo info =

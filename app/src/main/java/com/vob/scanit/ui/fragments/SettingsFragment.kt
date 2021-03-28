@@ -16,11 +16,13 @@ import androidx.preference.SwitchPreferenceCompat
 import com.vob.scanit.R
 import com.vob.scanit.currentSystemTheme
 
+/*We declare the class SettingsFragment that extends PreferenceFragmentCompat, which allows access to the Preference Library.*/
 class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
     var sharedPreferences: SharedPreferences? = null
     private val SHARED_PREF = "APP_SHARED_PREF"
 
+    /*onCreatePreferences() is called during onCreate(Bundle) and supplies the preferences to the fragment*/
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
@@ -42,6 +44,8 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClic
         }
     }
 
+    /*onPreferenceClick() gets called when a preference has been clicked, and the preference that was
+    * clicked is passed as an argument*/
     override fun onPreferenceClick(preference: Preference?): Boolean {
 
         if (preference != null) {
@@ -59,6 +63,8 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClic
         return true
     }
 
+    /*The following method is called when a Preference gets changed by the user. The arguments passed
+    * in are the changed preference and the new value of the preference*/
     override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
         if (preference is SwitchPreferenceCompat) {
             if (preference.key == "theme_toggle") {

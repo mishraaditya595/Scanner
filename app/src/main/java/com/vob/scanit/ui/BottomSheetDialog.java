@@ -21,6 +21,8 @@ import com.vob.scanit.ui.fragments.HomeFragment;
 
 import java.io.File;
 
+/* BottomSheetDialog implements BottomSheetDialogFragment to display a dialog with three options for the
+   corresponding file: Share, Delete and Rename */
 public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     File file;
@@ -28,6 +30,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         this.file = file;
     }
 
+    /*Following function inflates the XML file to show the dialog box with the three options*/
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable
             ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         Button shareBtn = v.findViewById(R.id.share_btn);
         Button renameBtn = v.findViewById(R.id.rename_btn);
 
+        /*Opens a dialog box with options for the user to choose from to share the file with*/
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -52,6 +56,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             }
         });
 
+        /* Renames the file and dismisses the dialog */
         renameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +64,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             }
         });
 
+        /* Deletes the file and dismisses the dialog*/
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)

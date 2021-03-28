@@ -23,6 +23,7 @@ import java.io.IOException
 import java.text.DateFormat
 import java.util.*
 
+/*The following class defines methods to allow users to read and generate QR codes,  */
 class GenerateQRActivity : AppCompatActivity() {
 
     lateinit var url_et: EditText
@@ -32,6 +33,8 @@ class GenerateQRActivity : AppCompatActivity() {
     lateinit var saveBtn: Button
     lateinit var file: File
 
+    /*onCreate() function sets up the toolbar, initialises all the fields and handles functionality related
+    * to the user clicking on the Generate QR button or the Share button*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_generate_q_r)
@@ -94,6 +97,7 @@ class GenerateQRActivity : AppCompatActivity() {
 
     }
 
+    /*saveQR() saves the QR generated in a folder along with the current timestamp */
     private fun saveQR(bitmap: Bitmap?) {
         if (bitmap != null)
         {
@@ -124,6 +128,7 @@ class GenerateQRActivity : AppCompatActivity() {
         }
     }
 
+    /*The class variables are initialised to the necessary values*/
     private fun initialiseFields() {
         url_et = findViewById(R.id.url_et)
         qr_iv = findViewById(R.id.qr_IV)
@@ -132,6 +137,7 @@ class GenerateQRActivity : AppCompatActivity() {
         saveBtn = findViewById(R.id.save_qr_button)
     }
 
+    /*setupToolbar() sets up the toolbar*/
     private fun setupToolbar() {
         var toolbar = findViewById<Toolbar>(R.id.generate_qr_toolbar)
         toolbar.title = "Generate QR"
